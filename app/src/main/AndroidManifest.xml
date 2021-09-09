@@ -15,7 +15,7 @@
         <activity android:name="ui.RestaurantsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="io.github.vinge1718.restaurant.ui.MainActivity">
+                android:value="ui.MainActivity">
             </meta-data>
         </activity>
         <activity android:name="ui.MainActivity" android:theme="@style/NoActionBarTheme"
