@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 import butterknife.BindView;
@@ -58,6 +60,10 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
         }
 
         public void bindRestaurant(Business restaurant) {
+
+            //picasso
+            Picasso.get().load(restaurant.getImageUrl()).into(mRestaurantImageView);
+
             mNameTextView.setText(restaurant.getName());
             mCategoryTextView.setText(restaurant.getCategories().get(0).getTitle());
             mRatingTextView.setText("Rating: " + restaurant.getRating() + "/5");
