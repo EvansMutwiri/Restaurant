@@ -14,11 +14,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#ffff">
+
             <ImageView
                 android:id="@+id/restaurantImageView"
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:scaleType="fitStart"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/waffles" />
         </RelativeLayout>
 
