@@ -5,6 +5,13 @@ import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
+import models.Category;
+import models.Coordinates;
+import models.Location;
+
+@Parcel
 public class Business {
 
     @SerializedName("rating")

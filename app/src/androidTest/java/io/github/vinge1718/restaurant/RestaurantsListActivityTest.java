@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 
-public class RestaurantsActivityTest {
+public class RestaurantsListActivityTest {
 
     @Before
     public void setUp() throws Exception {

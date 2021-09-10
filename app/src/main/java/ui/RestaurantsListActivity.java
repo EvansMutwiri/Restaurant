@@ -8,9 +8,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,10 +17,8 @@ import java.util.List;
 import adapters.RestaurantListAdapter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.github.vinge1718.restaurant.MyRestaurantsArrayAdapter;
 import io.github.vinge1718.restaurant.R;
 import models.Business;
-import models.Category;
 import models.YelpBusinessesSearchResponse;
 import network.YelpApi;
 import network.YelpClient;
@@ -31,8 +26,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class RestaurantsActivity extends AppCompatActivity {
-    private static final String TAG = RestaurantsActivity.class.getSimpleName();
+public class RestaurantsListActivity extends AppCompatActivity {
+    private static final String TAG = RestaurantsListActivity.class.getSimpleName();
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
 
@@ -52,7 +47,7 @@ public class RestaurantsActivity extends AppCompatActivity {
 //            @Override
 //            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 //                String restaurant = ((TextView)view).getText().toString();
-//                Toast.makeText(RestaurantsActivity.this, restaurant, Toast.LENGTH_LONG).show();
+//                Toast.makeText(RestaurantsListActivity.this, restaurant, Toast.LENGTH_LONG).show();
 //            }
 //        });
 
@@ -83,14 +78,14 @@ public class RestaurantsActivity extends AppCompatActivity {
 //                    }
 //
 //                    ArrayAdapter adapter
-//                            = new MyRestaurantsArrayAdapter(RestaurantsActivity.this, android.R.layout.simple_list_item_1, restaurants, categories);
+//                            = new MyRestaurantsArrayAdapter(RestaurantsListActivity.this, android.R.layout.simple_list_item_1, restaurants, categories);
 //                    mListView.setAdapter(adapter);
 
                     restaurants = response.body().getBusinesses();
-                    mAdapter = new RestaurantListAdapter(RestaurantsActivity.this, restaurants);
+                    mAdapter = new RestaurantListAdapter(RestaurantsListActivity.this, restaurants);
                     mRecyclerView.setAdapter(mAdapter);
                     RecyclerView.LayoutManager layoutManager =
-                            new LinearLayoutManager(RestaurantsActivity.this);
+                            new LinearLayoutManager(RestaurantsListActivity.this);
                     mRecyclerView.setLayoutManager(layoutManager);
                     mRecyclerView.setHasFixedSize(true);
 
@@ -105,7 +100,7 @@ public class RestaurantsActivity extends AppCompatActivity {
                 Log.e(TAG, "onFailure: ",t );
                 hideProgressBar();
                 showFailureMessage();
-                Toast.makeText(RestaurantsActivity.this, "enter a valid search", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RestaurantsListActivity.this, "enter a valid search", Toast.LENGTH_SHORT).show();
             }
 
         });
