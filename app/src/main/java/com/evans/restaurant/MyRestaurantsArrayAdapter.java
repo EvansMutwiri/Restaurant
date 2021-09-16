@@ -1,4 +1,4 @@
-package io.github.vinge1718.restaurant;
+package com.evans.restaurant;
 
 import android.content.Context;
 import android.widget.ArrayAdapter;

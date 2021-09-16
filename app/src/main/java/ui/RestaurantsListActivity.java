@@ -5,7 +5,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -17,7 +19,8 @@ import java.util.List;
 import adapters.RestaurantListAdapter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.github.vinge1718.restaurant.R;
+import com.evans.restaurant.Constants;
+import com.evans.restaurant.R;
 import models.Business;
 import models.YelpBusinessesSearchResponse;
 import network.YelpApi;
@@ -28,14 +31,16 @@ import retrofit2.Response;
 
 public class RestaurantsListActivity extends AppCompatActivity {
     private static final String TAG = RestaurantsListActivity.class.getSimpleName();
-    @BindView(R.id.recyclerView)
-    RecyclerView mRecyclerView;
+    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
+    @BindView(R.id.errorTextView) TextView mErrorTextView;
+    @BindView(R.id.progressBar) ProgressBar mProgressBar;
+
+//    private SharedPreferences mSharedPreferences;
+//    private String mRecentAddress;
 
     public List<Business> restaurants;
 
     private RestaurantListAdapter mAdapter;
-    @BindView(R.id.errorTextView) TextView mErrorTextView;
-    @BindView(R.id.progressBar) ProgressBar mProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +55,9 @@ public class RestaurantsListActivity extends AppCompatActivity {
 //                Toast.makeText(RestaurantsListActivity.this, restaurant, Toast.LENGTH_LONG).show();
 //            }
 //        });
+
+//        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+//        mRecentAddress = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
 
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");

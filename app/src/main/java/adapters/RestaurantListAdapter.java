@@ -18,7 +18,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.github.vinge1718.restaurant.R;
+import com.evans.restaurant.R;
 import models.Business;
 import ui.RestaurantDetailActivity;
 

@@ -1,7 +1,7 @@
 package network;
 
-import static io.github.vinge1718.restaurant.Constants.YELP_API_KEY;
-import static io.github.vinge1718.restaurant.Constants.YELP_BASE_URL;
+import static com.evans.restaurant.Constants.YELP_API_KEY;
+import static com.evans.restaurant.Constants.YELP_BASE_URL;
 
 import java.io.IOException;
 

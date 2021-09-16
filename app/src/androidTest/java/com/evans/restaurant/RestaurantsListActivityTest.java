@@ -1,4 +1,4 @@
-package io.github.vinge1718.restaurant;
+package com.evans.restaurant;
 
 import static org.junit.Assert.*;
 
